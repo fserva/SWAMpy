@@ -2,7 +2,7 @@
 
     Encapsulates all sambuca-core.forward_model arguments into a single
     namedtuple that is much easier to pass between various sambuca data
-    structures.
+    structures..
 """
 
 
