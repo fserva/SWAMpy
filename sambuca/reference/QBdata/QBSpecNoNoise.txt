@@ -1,0 +1,7 @@
+ENVI ASCII Plot File [Mon Jan 05 11:30:03 2015]
+Column 1: Wavelength
+Column 2: closedRSS~~1
+  480.31390  0.04306
+  544.76849  0.03626
+  652.39288  0.00264
+  804.33911  0.00068

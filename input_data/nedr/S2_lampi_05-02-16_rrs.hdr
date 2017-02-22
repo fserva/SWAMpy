@@ -1,0 +1,34 @@
+ENVI
+description = {
+  File Resize Result, x resize factor: 1.000000, y resize factor: 1.000000.
+  [Wed Feb 15 10:00:16 2017]}
+samples = 118
+lines   = 50
+bands   = 10
+header offset = 0
+file type = ENVI Standard
+data type = 4
+interleave = bsq
+sensor type = Unknown
+byte order = 0
+y start = 3883
+map info = {UTM, 1.000, 1.000, 421656.952, 1185680.805, 9.9985046400e+000, 9.9985046400e+000, 0, North, World Geodetic System 1984, units=Meters}
+coordinate system string = {PROJCS["WGS 84 / UTM zone 47N",GEOGCS["WGS 84",DATUM["World Geodetic System 1984",SPHEROID["WGS 84",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["false_easting",500000.0],PARAMETER["false_northing",0.0],PARAMETER["central_meridian",99.0],PARAMETER["scale_factor",0.9996],PARAMETER["latitude_of_origin",0.0],UNIT["m",1.0]]}
+wavelength units = Micrometers
+band names = {
+ Resize (Band Math (band  1 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  2 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  3 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  4 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  5 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  6 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  7 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  8 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band  9 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs), 
+ Resize (Band Math (band 10 refl [%*100]:S2A_OPER_MTD_SAFL1C_20160205T040506_resampled_LAMPI-radiance_atm.bsq):S2_lampi_05021_atm_rrs)}
+wavelength = {
+ 0.442960, 0.491530, 0.560770, 0.665510, 0.704320, 0.740380, 0.784170,
+ 0.832850, 0.864440, 0.945670}
+fwhm = {
+ 0.019500, 0.064000, 0.035500, 0.030000, 0.013000, 0.013000, 0.018500,
+ 0.090500, 0.019000, 0.019500}

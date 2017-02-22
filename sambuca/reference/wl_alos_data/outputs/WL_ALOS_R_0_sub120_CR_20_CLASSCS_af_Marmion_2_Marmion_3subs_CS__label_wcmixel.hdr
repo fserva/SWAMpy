@@ -1,0 +1,19 @@
+ENVI
+description = {
+  ENVI File, Created [Thu Sep 11 15:47:47 2014]}
+samples = 120
+lines   = 120
+bands   = 3
+header offset = 0
+file type = ENVI Standard
+data type = 4
+interleave = bil
+sensor type = Unknown
+byte order = 0
+x start = 7580
+y start = 7392
+map info = {UTM, 1.000, 1.000, 452754.140, 6431592.569, 1.0000000000e+001, 1.0000000000e+001, 56, South, WGS-84, units=Meters}
+coordinate system string = {PROJCS["UTM_Zone_56S",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",500000.0],PARAMETER["False_Northing",10000000.0],PARAMETER["Central_Meridian",153.0],PARAMETER["Scale_Factor",0.9996],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0]]}
+wavelength units = Unknown
+wavelength = {
+ 460.000000, 560.000000, 650.000000}
