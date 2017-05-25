@@ -34,6 +34,7 @@ def output_suite(result_recorder, image_info, coordinates):
     sub2_frac = ma.masked_array(result_recorder.sub2_frac[xs:xe,ys:ye],mask=skip_mask)
     sub3_frac = ma.masked_array(result_recorder.sub3_frac[xs:xe,ys:ye],mask=skip_mask)
     error_f = ma.masked_array(result_recorder.error_f[xs:xe,ys:ye],mask=skip_mask)
+    error_lsq = ma.masked_array(result_recorder.error_lsq[xs:xe,ys:ye],mask=skip_mask)
     total_abun = sub1_frac+sub2_frac+sub3_frac
     sub1_norm = sub1_frac / total_abun
     sub2_norm = sub2_frac / total_abun
@@ -43,9 +44,9 @@ def output_suite(result_recorder, image_info, coordinates):
      
     # A scaled true colour image to look at closed rrs
     rgbimg=np.zeros(((xe-xs),(ye-ys),3), 'uint8')
-    rgbimg[..., 0] = (result_recorder.closed_rrs[xs:xe,ys:ye,3])*1024
-    rgbimg[..., 1] = (result_recorder.closed_rrs[xs:xe,ys:ye,2])*1024
-    rgbimg[..., 2] = (result_recorder.closed_rrs[xs:xe,ys:ye,1])*1024
+    rgbimg[..., 0] = (result_recorder.closed_rrs[xs:xe,ys:ye,2])*1024
+    rgbimg[..., 1] = (result_recorder.closed_rrs[xs:xe,ys:ye,1])*1024
+    rgbimg[..., 2] = (result_recorder.closed_rrs[xs:xe,ys:ye,0])*1024
     
     sambuca_outputs.writeout('1_depth.tif',depth,image_info['affine'],image_info['crs'],np.float32)
     
@@ -73,14 +74,24 @@ def output_suite(result_recorder, image_info, coordinates):
     
     sambuca_outputs.writeout('13_closedrrs.tif',result_recorder.closed_rrs[xs:xe,ys:ye,:],image_info['affine'],image_info['crs'],np.float32,transpose=[2,0,1])
 
-    img_path='C:\\Users\\PCUSER\\sambuca_project\\Swampy\\'
-    plt.imshow(depth[xs:xe,ys:ye], interpolation='nearest');
+    sambuca_outputs.writeout('14_error_lsq.tif',error_lsq,image_info['affine'],image_info['crs'],np.float32)
+    
+    sambuca_outputs.writeout('15_closedrrsdp.tif',result_recorder.closed_rrsdp[xs:xe,ys:ye,:],image_info['affine'],image_info['crs'],np.float32,transpose=[2,0,1])
+    
+    sambuca_outputs.writeout('16_chl.tif',chl,image_info['affine'],image_info['crs'],np.float32)
+    
+    sambuca_outputs.writeout('17_cdom.tif',cdom,image_info['affine'],image_info['crs'],np.float32)
+    
+    sambuca_outputs.writeout('18_nap.tif',nap,image_info['affine'],image_info['crs'],np.float32)
+    
+    img_path='C:\\Users\\PCUSER\\sambuca_project\\SWAMpy1_0\\'
+    plt.imshow(depth, interpolation='nearest');
     img = plt.colorbar()
     plt.title('depth')
     plt.savefig(img_path +"\\depth.png")
     plt.close()
         
-    plt.imshow(sdi[xs:xe,ys:ye], interpolation='nearest');
+    plt.imshow(sdi, interpolation='nearest');
     img = plt.colorbar()
     plt.title('sdi')
     plt.savefig(img_path +"\\sdi.png")

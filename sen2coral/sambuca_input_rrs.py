@@ -21,13 +21,13 @@ def sam_obs(base_path, Rrs = False):
         #base_path = 'C:\\Users\\PCUSER\\sambuca_project\\input_data\\'
         
         observed_rrs_base_path = base_path + 'image\\'
-        observed_rrs_raster_path = join(observed_rrs_base_path, 'S2_lampi_05-02-16_rrs.img')
-        observed_rrs_filename='S2_lampi_05-02-16_rrs.img'
+        observed_rrs_raster_path = join(observed_rrs_base_path, 'TorresLS8Sub_3bands.img')
+        observed_rrs_filename='TorresLS8Sub_3bands.img'
         sensor_filter_path = join(base_path, 'sensor_filters')
-        sensor_filter_name = 'S25'
-        #nedr_path = join(base_path + 'nedr\\', 'WL_ALOS_NEDR_0_4bands.hdr')
-        #nedr_path = join(base_path + 'nedr\\', 'S2test.hdr')
-        nedr_path = join(base_path, 'nedr/s2testc5.csv')
+        sensor_filter_name = 'LS8BGR'
+        #nedr_path = join(base_path + 'nedr\\', 'ls8n.csv')
+        nedr_path = join(base_path + 'nedr\\', 'ls8noise3B.hdr')
+       # nedr_path = join(base_path, 'nedr/s2testc5.csv')
        
         
         
@@ -59,12 +59,14 @@ def sam_obs(base_path, Rrs = False):
         sensor_filter = sensor_filters[sensor_filter_name]
         
         #SPECIFY NEDR values e.g lib:bandname or for csv file:columheader
-        #nedr = sbc.load_spectral_library(nedr_path, validate=False)['wl_alos_nedr_0_4bands:33']
-        nedr = sbc.load_spectral_library(nedr_path, validate=False)['s2testc5:rrs']
+        nedr = sbc.load_spectral_library(nedr_path, validate=False)['ls8noise3b:25']
+        #nedr = sbc.load_spectral_library(nedr_path, validate=False)['s2testc5:rrs']
         
-        
+       
+         
         # Select subset of Bands e.g. 5 S2 bands
-        observed_rrs = observed_rrs[0:5,:,:]
+        print(observed_rrs.shape)
+        #observed_rrs = observed_rrs[0:3,:,:]
         print(observed_rrs.shape)
         
         #***************************************************************
@@ -76,8 +78,9 @@ def sam_obs(base_path, Rrs = False):
         if Rrs == True:
             observed_rrs = (2*observed_rrs)/((3*observed_rrs)+1)
 
-        print(observed_rrs[:,20,30])
-        print(nedr)
+        #print(observed_rrs[:,20,30])
+        #print(nedr)
+        
         
         
         image_info={'observed_rrs_width':observed_rrs_width, 'observed_rrs_height':observed_rrs_height, 'crs':crs,

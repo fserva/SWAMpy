@@ -22,7 +22,7 @@ def sam_com( observed_rrs, objective, siop, result_recorder, image_info, shallow
     #Define a region to process in the image input
     
     #*****Observed data is in band, row(height, x), column(width, y)******
-    xstart = 0
+    xstart =0
     xend = image_info['observed_rrs_height']
     xspan = xend - xstart
     ystart = 0
@@ -34,21 +34,22 @@ def sam_com( observed_rrs, objective, siop, result_recorder, image_info, shallow
     
     
     # set current starting points as the midpoints of the parameters   
-    p0 = (np.array(siop['p_max'])-np.array(siop['p_min']))/2
+    #p0 = (np.array(siop['p_max'])+np.array(siop['p_min']))/2
+    p0 = np.array(siop['p_min'])+((np.array(siop['p_max'])+np.array(siop['p_min']))/4)
     t0 = time.time()
     
     # set some relaxed abundance constraints (RASC) after Petit et. al.(2017)******
     
-    low_relax = 0.5
-    high_relax = 2.0
+    low_relax = 0.7
+    high_relax = 1.3
     
-    #cons=({'type':'ineq','fun':lambda x:high_relax -(x[4]+x[5]+x[6])},
-    #      {'type':'ineq','fun':lambda x:(x[4]+x[5]+x[6])- low_relax})
+    cons=({'type':'ineq','fun':lambda x:high_relax -(x[4]+x[5]+x[6])},
+          {'type':'ineq','fun':lambda x:(x[4]+x[5]+x[6])- low_relax})
     
     #******************************************************************************
     # Return to sum to one constraint
     
-    cons=({'type':'eq','fun':lambda x:1-(x[4]+x[5]+x[6])})
+    #cons=({'type':'eq','fun':lambda x:1-(x[4]+x[5]+x[6])})
     
     #******************************************************************************
     
@@ -71,7 +72,7 @@ def sam_com( observed_rrs, objective, siop, result_recorder, image_info, shallow
                             method='SLSQP',
                             bounds=siop['p_bounds'],
                             constraints=cons,
-                            options={'disp':False, 'maxiter':10000},
+                            options={'disp':False, 'maxiter':5000},
                             obs_rrs=obs_rrs)
                    
                 #%time result = minimize(objective, p0, method='SLSQP', bounds=p_bounds, options={'disp':False, 'maxiter':500})

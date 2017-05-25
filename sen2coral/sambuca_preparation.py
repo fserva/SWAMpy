@@ -89,7 +89,7 @@ def sam_prep(siop, envmeta, image_info):
             sensor_filter,  
             nedr,
             fixed_parameters)
-    objective = sb.SciPyObjective(sensor_filter, fixed_parameters, error_function=sb.distance_f, nedr=nedr)
+    objective = sb.SciPyObjective(sensor_filter, fixed_parameters, error_function=sb.distance_lsq, nedr=nedr)
     siop['a_water']=a_water
     siop['a_ph_star']=a_ph_star
     siop['substrates']=substrates

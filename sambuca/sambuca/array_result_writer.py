@@ -89,6 +89,7 @@ class ArrayResultWriter(PixelResultHandler):
         self.success = np.full((height, width), -1, dtype=np.int64)
         self.kd = np.zeros((height, width))
         self.sdi = np.zeros((height, width))
+        self.closed_rrsdp = np.zeros((height, width, self._num_observed_bands))
 
 
     def __call__(self, x, y, observed_rrs, parameters=None, nit=None, success=None):
@@ -184,3 +185,4 @@ class ArrayResultWriter(PixelResultHandler):
         # New outputs
         self.kd[x,y] = kd_out
         self.sdi[x,y] = sdi
+        self.closed_rrsdp[x,y,:] = closed_rrsdp
