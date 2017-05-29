@@ -84,7 +84,7 @@ def output_suite(result_recorder, image_info, coordinates):
     
     sambuca_outputs.writeout('18_nap.tif',nap,image_info['affine'],image_info['crs'],np.float32)
     
-    img_path='C:\\Users\\PCUSER\\sambuca_project\\SWAMpy1_0\\'
+    img_path='C:\\Users\\PCUSER\\sambuca_project\\SWAMpy\\'
     plt.imshow(depth, interpolation='nearest');
     img = plt.colorbar()
     plt.title('depth')
