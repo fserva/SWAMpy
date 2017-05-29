@@ -87,8 +87,8 @@ def sam_par(base_path):
         p_max = sb.FreeParameters(
             chl=0.16, 
             cdom=0.01, 
-            nap=1.5,
-            depth=15,
+            nap=0.6,
+            depth=20,
             sub1_frac=1.3,
             sub2_frac=1.3,
             sub3_frac=1.3) 
@@ -104,7 +104,7 @@ def sam_par(base_path):
                  'bb_nap_slope': None, 'lambda0cdom': 550.0, 'lambda0nap': 550.0, 'lambda0x': 546.00, 'x_ph_lambda0x': 0.00157747, 'x_nap_lambda0x': 0.0225353, 'a_cdom_lambda0cdom': 1.0,
                   'a_nap_lambda0nap': 0.00433, 'bb_lambda_ref': 550, 'water_refractive_index': 1.33784, 'p_min': p_min, 'p_max': p_max, 'p_bounds': p_bounds}
         #print (siop)
-        envmeta = {'theta_air': 60.0, 'off_nadir': 0.0, 'q_factor': np.pi}
+        envmeta = {'theta_air': 45.0, 'off_nadir': 0.0, 'q_factor': np.pi}
         
         
                   

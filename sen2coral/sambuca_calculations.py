@@ -35,7 +35,7 @@ def sam_com( observed_rrs, objective, siop, result_recorder, image_info, shallow
     
     # set current starting points as the midpoints of the parameters   
     #p0 = (np.array(siop['p_max'])+np.array(siop['p_min']))/2
-    p0 = np.array(siop['p_min'])+((np.array(siop['p_max'])+np.array(siop['p_min']))/4)
+    p0 = np.array(siop['p_min'])+((np.array(siop['p_max'])-np.array(siop['p_min']))/4)
     t0 = time.time()
     
     # set some relaxed abundance constraints (RASC) after Petit et. al.(2017)******

@@ -1,6 +1,6 @@
 ENVI
 description = {
-  New spectral library file [Tue Mar 14 14:07:51 2017]}
+  New spectral library file [Thu May 25 12:48:42 2017]}
 samples = 4
 lines   = 1
 bands   = 1
@@ -10,12 +10,12 @@ data type = 5
 interleave = bsq
 sensor type = Unknown
 byte order = 0
-wavelength units = Micrometers
+wavelength units = Nanometers
 reflectance scale factor = 1.000000
 z plot titles = {Wavelength, Value}
 band names = {
  Spectral Library}
 spectra names = {
-       41}
+       39}
 wavelength = {
  480.000000, 560.000000, 655.000000, 865.000000}

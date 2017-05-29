@@ -21,12 +21,12 @@ def sam_obs(base_path, Rrs = False):
         #base_path = 'C:\\Users\\PCUSER\\sambuca_project\\input_data\\'
         
         observed_rrs_base_path = base_path + 'image\\'
-        observed_rrs_raster_path = join(observed_rrs_base_path, 'TorresLS8Sub_3bands.img')
-        observed_rrs_filename='TorresLS8Sub_3bands.img'
+        observed_rrs_raster_path = join(observed_rrs_base_path, 'LS84bandsGBRSub_rrs.img')
+        observed_rrs_filename='LS84bandsGBRSub_rrs.img'
         sensor_filter_path = join(base_path, 'sensor_filters')
-        sensor_filter_name = 'LS8BGR'
+        sensor_filter_name = 'LS8BGRN'
         #nedr_path = join(base_path + 'nedr\\', 'ls8n.csv')
-        nedr_path = join(base_path + 'nedr\\', 'ls8noise3B.hdr')
+        nedr_path = join(base_path + 'nedr\\', 'ls8noise4b.hdr')
        # nedr_path = join(base_path, 'nedr/s2testc5.csv')
        
         
@@ -59,7 +59,7 @@ def sam_obs(base_path, Rrs = False):
         sensor_filter = sensor_filters[sensor_filter_name]
         
         #SPECIFY NEDR values e.g lib:bandname or for csv file:columheader
-        nedr = sbc.load_spectral_library(nedr_path, validate=False)['ls8noise3b:25']
+        nedr = sbc.load_spectral_library(nedr_path, validate=False)['ls8noise4b:41']
         #nedr = sbc.load_spectral_library(nedr_path, validate=False)['s2testc5:rrs']
         
        
